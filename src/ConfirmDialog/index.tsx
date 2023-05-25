@@ -6,7 +6,7 @@ import { styles } from "./styles"
 interface ConfirmDialogProps {}
 
 export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({}) => {
-    const { open, setOpen, title, content, onConfirm } = useConfirmDialog()
+    const { open, setOpen, title, content, onConfirm, button } = useConfirmDialog()
 
     const handleClose = () => {
         setOpen(false)
@@ -32,7 +32,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({}) => {
             <DialogActions>
                 <Button onClick={handleClose}>Cancelar</Button>
                 <Button variant="contained" onClick={confirm} autoFocus>
-                    Confirmar
+                    {button}
                 </Button>
             </DialogActions>
         </Dialog>
