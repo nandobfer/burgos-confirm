@@ -4,7 +4,7 @@ import { ConfirmDialogContext } from "./confirmDialogContext"
 interface OpenConfirmDialog {
     title: string
     content: string
-    button?: string
+    button?: React.ReactNode
     onConfirm: () => void
 }
 
