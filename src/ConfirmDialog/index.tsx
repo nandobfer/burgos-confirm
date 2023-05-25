@@ -1,6 +1,6 @@
 import React from "react"
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material"
-import { useConfirmDialog } from "../../hooks/useConfirmDialog"
+import { useConfirmDialog } from "../useConfirmDialog"
 import { styles } from "./styles"
 
 interface ConfirmDialogProps {}
