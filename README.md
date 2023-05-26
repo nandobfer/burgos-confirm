@@ -17,7 +17,7 @@ wrap your app in <ConfirmDialogProvider>  <ConfirmDialogProvider/> and place the
 Use the useConfirmDialog hook to retrieve the method and call it passing the title, content and onConfirm as an object:
 
 ```jsx
-import { useConfirmDialog } from 'burgos-snackbar'
+import { useConfirmDialog } from 'burgos-confirm'
 
 export const App = () => {
     const { confirm } = useConfirmDialog()
