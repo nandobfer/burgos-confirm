@@ -4,8 +4,9 @@ import { ConfirmDialogContext } from "./confirmDialogContext"
 interface OpenConfirmDialog {
     title: string
     content: string
-    button?: string
     onConfirm: () => void
+    hideCancel?: boolean
+    button?: string
 }
 
 export const useConfirmDialog = () => {
@@ -16,6 +17,7 @@ export const useConfirmDialog = () => {
         confirmDialogContext.setContent(options.content)
         confirmDialogContext.setButton(options.button || "Confirmar")
         confirmDialogContext.setOpen(true)
+        confirmDialogContext.setHideCancel(options.hideCancel)
         confirmDialogContext.setOnConfirm(() => options.onConfirm)
     }
 

@@ -13,6 +13,9 @@ export interface ConfirmDialog {
     setContent: (title: string) => void
     onConfirm: () => void
     setOnConfirm: Dispatch<SetStateAction<any>>
+
+    hideCancel: boolean
+    setHideCancel: (hide: boolean) => void
 }
 
 interface ConfirmDialogProviderProps {
@@ -27,6 +30,7 @@ export const ConfirmDialogProvider: React.FC<ConfirmDialogProviderProps> = ({ ch
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [button, setButton] = useState("")
+    const [hideCancel, setHideCancel] = useState(false)
 
     useEffect(() => {
         console.log({ open })
@@ -34,7 +38,7 @@ export const ConfirmDialogProvider: React.FC<ConfirmDialogProviderProps> = ({ ch
 
     return (
         <ConfirmDialogContext.Provider
-            value={{ open, setOpen, title, setTitle, content, setContent, onConfirm, setOnConfirm, button, setButton }}
+            value={{ open, setOpen, title, setTitle, content, setContent, onConfirm, setOnConfirm, button, setButton, hideCancel, setHideCancel }}
         >
             {children}
         </ConfirmDialogContext.Provider>
